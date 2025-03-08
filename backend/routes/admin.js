@@ -1,21 +1,21 @@
 const { createPlayer, getPlayers, deletePlayer, updatePlayer } = require('../controllers/admin.js');
 
-const {verifyToken} = require('../middleware/auth.js');
+//const { = require('../middleware/auth.js');
 
 const express = require('express');
 
 const router = express.Router();
 
 //CREATE
-router.post("/",verifyToken, createPlayer);
+router.post("/", createPlayer);
 
 //READ
-router.get("/",verifyToken, getPlayers);
+router.get("/", getPlayers);
 
 //UPDATE
-router.patch("/:id",verifyToken, updatePlayer);
+router.patch("/:id", updatePlayer);
 
 //DELETE
-router.delete("/:id",verifyToken, deletePlayer);
+router.delete("/:id", deletePlayer);
 
 module.exports = router;
