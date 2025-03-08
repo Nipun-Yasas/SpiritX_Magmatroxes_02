@@ -22,6 +22,7 @@ export default function LoginForm() {
         backgroundImage: "url('/login_page/Background Image.svg')", 
         backgroundSize: "cover",
         backgroundPosition: "center",
+        
       }}
     >
       <Container maxWidth="lg" sx={{ display: "flex", justifyContent: "center" }}>
@@ -78,14 +79,20 @@ export default function LoginForm() {
           <Grid
             item
             xs={12}
-            md={5}  
+            md={4}  
             sx={{
               backgroundImage: "url('/login_page/Crickter Image.svg')", 
               backgroundSize: "contain", 
               backgroundPosition: "center",
               height: "80vh",  
               borderRadius: "8px",
-              backgroundRepeat: "no-repeat"
+              
+              
+              
+              
+              backgroundRepeat : "no-repeat",
+              
+              
             }}
           />
         </Grid>
