@@ -12,6 +12,7 @@ app.get('/', (req, res) => {
 
 const signupRoute = require('./routes/signup'); 
 const loginRoute = require('./routes/login');
+const adminRoute = require('./routes/admin');
 
 
 app.use(bodyParser.json());
@@ -31,6 +32,7 @@ module.exports = mongoose;
 
 app.use('/auth', signupRoute);
 app.use('/auth', loginRoute);
+app.use('/admin', adminRoute);
 
 
 app.listen(port, () => {
