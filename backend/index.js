@@ -14,11 +14,14 @@ const signupRoute = require('./routes/signup');
 const loginRoute = require('./routes/login');
 const adminRoute = require('./routes/admin');
 
+const userRoute = require('./routes/user');
+
 
 app.use(bodyParser.json());
 
 //MONGODB CONNECTION
 const mongoose = require('mongoose');
+const User = require('./models/User');
 const dbURI = process.env.DB_URL;
 
 mongoose.connect(dbURI,{
@@ -33,6 +36,8 @@ module.exports = mongoose;
 app.use('/auth', signupRoute);
 app.use('/auth', loginRoute);
 app.use('/admin', adminRoute);
+
+app.use('/user', userRoute);
 
 
 app.listen(port, () => {

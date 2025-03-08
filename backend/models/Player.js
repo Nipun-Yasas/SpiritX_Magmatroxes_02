@@ -10,7 +10,7 @@ const playerSchema = new mongoose.Schema({
     ballsfaced: { type: Number, default: 0 },
     overballed: { type: Number, default: 0 },
     runsconceded: { type: Number, default: 0 },
-    
+    value: { type: Number, required: true },
 });
 
 module.exports = mongoose.model("Player", playerSchema);
