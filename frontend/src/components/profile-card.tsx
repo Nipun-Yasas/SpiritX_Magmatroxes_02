@@ -5,9 +5,9 @@ import Image from "next/image"; // Import Next.js Image component
 
 export default function ProfileCard() {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-slate-800 p-4">
+    <div className="flex items-center justify-center py-1 px-4">
       <Card className="w-full max-w-[280px] bg-[#1a1a1a] text-white overflow-hidden">
-        <div className="p-6 flex flex-col items-center space-y-4">
+        <div className="px-6 py-0 flex flex-col items-center space-y-4">
           {/* Avatar with glow effect */}
           <div className="relative">
             <div className="absolute inset-0 bg-blue-500/20 blur-xl rounded-full" />
