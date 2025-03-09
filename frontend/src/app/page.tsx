@@ -21,17 +21,25 @@ export default function Home() {
     
     <div>
       
-      <Sidebar />
-      
+      <div className="pl-10">
       <Navbar />
+      </div>
+      <Sidebar />
+    
+      
+      
+      
       
       <main className="justify-center items-center min-h-screen bg-gray-100">
       
+      <div className="pl-15 bg-[url('/background.svg')] bg-cover bg-center h-screen w-full">
       <Grid />
+      </div>
 
 
     </main>
     </div>
+    
   );
 }
 

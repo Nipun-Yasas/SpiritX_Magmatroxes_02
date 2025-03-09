@@ -3,6 +3,9 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { ChevronDownIcon } from '@heroicons/react/16/solid'
+import Navbar from "@/components/navbar";
+import Sidebar from "@/components/ui/sideNav";
+
 
 interface Player {
     _id?: string;
@@ -82,19 +85,29 @@ const PlayerManagement: React.FC = () => {
     };
 
     return (
-    <>
-        <div>
-            <h2 className="text-3xl mb-5 text-center text-blue-500">Player Management</h2>
+
+
+    <div className="bg-[url('/background.svg')] bg-cover bg-center h-screen w-full"> 
+
+    <div className="pl-10">
+    <Navbar />
+    </div>
+    
+    <Sidebar />
+    
+
+        <div className="pl-20">
+            <h2 className="text-3xl mb-5 text-center text-white">Player Management</h2>
            
             <form className="m-2" onSubmit={handleSubmit}>
-                <h1 className="text-xl">Add players</h1>
+                <h1 className="text-xl text-white">Add players</h1>
         <div className="space-y-12">
         
-        <div className="border-b border-gray-900/10 pb-12">
+        <div className="px-20 border-b border-white/10 pb-12">
 
           <div className="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
             <div className="sm:col-span-3">
-              <label htmlFor="name" className="block text-sm/6 font-medium text-gray-900">
+              <label htmlFor="name" className="block text-sm/6 font-medium text-white">
                 Name
               </label>
               <div className="mt-2">
@@ -105,13 +118,13 @@ const PlayerManagement: React.FC = () => {
                   value={form.name} 
                   onChange={handleChange} required
                   autoComplete="given-name"
-                  className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
+                  className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-white outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
                 />
               </div>
             </div>
 
             <div className="sm:col-span-3">
-              <label htmlFor="university" className="block text-sm/6 font-medium text-gray-900">
+              <label htmlFor="university" className="block text-sm/6 font-medium text-white">
               University
               </label>
               <div className="mt-2">
@@ -121,13 +134,13 @@ const PlayerManagement: React.FC = () => {
                   type="text"
                   placeholder="University" value={form.university} onChange={handleChange} required
                   autoComplete="family-name"
-                  className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
+                  className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-white outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
                 />
               </div>
             </div>
 
             <div className="sm:col-span-3">
-              <label htmlFor="category" className="block text-sm/6 font-medium text-gray-900">
+              <label htmlFor="category" className="block text-sm/6 font-medium text-white">
               Category
               </label>
               <div className="mt-2 grid grid-cols-1">
@@ -137,7 +150,7 @@ const PlayerManagement: React.FC = () => {
                   value={form.category} onChange={handleChange} 
                   required
                   autoComplete="category"
-                  className="col-start-1 row-start-1 w-full appearance-none rounded-md bg-white py-1.5 pr-8 pl-3 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
+                  className="col-start-1 row-start-1 w-full appearance-none rounded-md bg-white py-1.5 pr-8 pl-3 text-base text-white outline-1 -outline-offset-1 outline-gray-300 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
                 >
                   <option>Batsman</option>
                   <option>Bowler</option>
@@ -151,7 +164,7 @@ const PlayerManagement: React.FC = () => {
             </div>
 
             <div className="sm:col-span-3">
-              <label htmlFor="price" className="block text-sm/6 font-medium text-gray-900">
+              <label htmlFor="price" className="block text-sm/6 font-medium text-white">
               Value
               </label>
               <div className="mt-2">
@@ -161,13 +174,13 @@ const PlayerManagement: React.FC = () => {
                   type="number"
                   placeholder="Value" value={form.price} onChange={handleChange} required
                   autoComplete="family-name"
-                  className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
+                  className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-white outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
                 />
               </div>
             </div>
 
             <div className="sm:col-span-2 sm:col-start-1">
-              <label htmlFor="inningsplayed" className="block text-sm/6 font-medium text-gray-900">
+              <label htmlFor="inningsplayed" className="block text-sm/6 font-medium text-white">
               Innings played
               </label>
               <div className="mt-2">
@@ -177,13 +190,13 @@ const PlayerManagement: React.FC = () => {
                   type="number"
                   placeholder="Innings Played" value={form.inningsplayed} onChange={handleChange} required
                   autoComplete="address-level2"
-                  className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
+                  className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-white outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
                 />
               </div>
             </div>
 
             <div className="sm:col-span-2">
-              <label htmlFor="totalruns" className="block text-sm/6 font-medium text-gray-900">
+              <label htmlFor="totalruns" className="block text-sm/6 font-medium text-white">
               Total Runs
               </label>
               <div className="mt-2">
@@ -193,13 +206,13 @@ const PlayerManagement: React.FC = () => {
                   type="number"
                   placeholder="Total Runs" value={form.totalruns} onChange={handleChange} required
                   autoComplete="address-level1"
-                  className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
+                  className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-white outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
                 />
               </div>
             </div>
 
             <div className="sm:col-span-2">
-              <label htmlFor="wickets" className="block text-sm/6 font-medium text-gray-900">
+              <label htmlFor="wickets" className="block text-sm/6 font-medium text-white">
               Wickets
               </label>
               <div className="mt-2">
@@ -209,13 +222,13 @@ const PlayerManagement: React.FC = () => {
                   type="number"
                   placeholder="Wickets" value={form.wickets} onChange={handleChange} required
                   autoComplete="postal-code"
-                  className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
+                  className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-white outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
                 />
               </div>
             </div>
 
             <div className="sm:col-span-2 sm:col-start-1">
-              <label htmlFor="ballsfaced" className="block text-sm/6 font-medium text-gray-900">
+              <label htmlFor="ballsfaced" className="block text-sm/6 font-medium text-white">
               Balls Faced
               </label>
               <div className="mt-2">
@@ -225,13 +238,13 @@ const PlayerManagement: React.FC = () => {
                   type="number"
                   placeholder="Balls Faced" value={form.ballsfaced} onChange={handleChange} required
                   autoComplete="address-level2"
-                  className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
+                  className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-white outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
                 />
               </div>
             </div>
 
             <div className="sm:col-span-2">
-              <label htmlFor="overballed" className="block text-sm/6 font-medium text-gray-900">
+              <label htmlFor="overballed" className="block text-sm/6 font-medium text-white">
               over Balled
               </label>
               <div className="mt-2">
@@ -241,13 +254,13 @@ const PlayerManagement: React.FC = () => {
                   type="number"
                   placeholder="Overs Bowled" value={form.overballed} onChange={handleChange} required
                   autoComplete="address-level1"
-                  className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
+                  className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-white outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
                 />
               </div>
             </div>
 
             <div className="sm:col-span-2">
-              <label htmlFor="runsconceded" className="block text-sm/6 font-medium text-gray-900">
+              <label htmlFor="runsconceded" className="block text-sm/6 font-medium text-white">
               Runs Conceded
               </label>
               <div className="mt-2">
@@ -257,7 +270,7 @@ const PlayerManagement: React.FC = () => {
                   type="number"
                   placeholder="Runs Conceded" value={form.runsconceded} onChange={handleChange}
                   autoComplete="postal-code"
-                  className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
+                  className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-white outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
                 />
               </div>
             </div>
@@ -280,8 +293,9 @@ const PlayerManagement: React.FC = () => {
 
     
 
-            <h3 className="text-xl m-3">Players List</h3>
+            <h3 className="text-xl m-3 text-white">Players List</h3>
 
+            <div className="text-white">
             <table className="table-auto w-full border-1 border-gray-500 mt-5">
                 <thead className="border-1 border-gray-500">
                     <tr className="border-1 border-gray-500">
@@ -321,11 +335,12 @@ const PlayerManagement: React.FC = () => {
                 </tbody>
                 
             </table>
+            </div>
         </div>
 
     
 
-    </>
+    </div>
     );
 };
 

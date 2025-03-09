@@ -34,9 +34,9 @@ export default function ProfileCard() {
 
           {/* Buttons */}
           <div className="flex gap-2 w-full pt-2">
-            <Button className="flex-1 bg-amber-500 hover:bg-amber-600 text-black font-medium">JOIN NOW</Button>
+            <Button className="flex-1 bg-amber-500 hover:bg-amber-600 text-black font-medium">Pick Me</Button>
             <Button  className="flex-1 bg-amber-500 hover:bg-amber-600 text-black font-medium">
-              LEARN MORE
+              More Info
             </Button>
           </div>
         </div>
