@@ -89,7 +89,10 @@ const PlayerManagement: React.FC = () => {
 
     <div className="bg-[url('/background.svg')] bg-cover bg-center h-screen w-full"> 
 
+    <div className="pl-10">
     <Navbar />
+    </div>
+    
     <Sidebar />
     
 

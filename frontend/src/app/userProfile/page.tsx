@@ -10,7 +10,11 @@ export default function Home() {
   return (
     <div>
       <Sidebar />
+      <div className="pl-10">
       <Navbar />
+      </div>
+
+      
 
       <Box sx={{ padding: 3, marginLeft: "60px", marginTop: "64px" }}>
         {/* Top Section */}
