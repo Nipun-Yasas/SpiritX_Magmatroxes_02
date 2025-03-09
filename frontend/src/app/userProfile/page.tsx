@@ -9,14 +9,15 @@ import { History, EmojiEvents, AccessTime } from "@mui/icons-material"; // ✅ I
 export default function Home() {
   return (
     <div>
-      <Sidebar />
       <div className="pl-10">
       <Navbar />
       </div>
-
+      <Sidebar />
       
 
-      <Box sx={{ padding: 3, marginLeft: "60px", marginTop: "64px" }}>
+      <div className="pl-15 bg-[url('/background.svg')] bg-cover bg-center h-screen w-full">
+
+      <Box sx={{ padding: 3, marginLeft: "60px", marginTop: "0px" }}>
         {/* Top Section */}
         <Grid container spacing={3} alignItems="center">
           {/* Player Info */}
@@ -26,10 +27,10 @@ export default function Home() {
 
           {/* Introduction */}
           <Grid item xs={12} sm={5}>
-            <Typography variant="h4" fontWeight="bold">
+            <Typography variant="h4" fontWeight="bold" color="white">
               Meet, Jehan!
             </Typography>
-            <Typography variant="body1" sx={{ marginTop: 1 }}>
+            <Typography variant="body1" color="white" sx={{ marginTop: 1 }}>
               With over 10 years of playing experience at both national and international levels,
               Jehan has built a strong reputation in the cricket world.
             </Typography>
@@ -55,10 +56,10 @@ export default function Home() {
         </Grid>
 
         {/* Divider */}
-        <Box sx={{ marginY: 7, borderBottom: "1px solid white" }} />
+        <Box sx={{ marginY: 12, borderBottom: "1px solid white" }} />
 
         {/* Stats Cards */}
-        <Grid container spacing={3} justifyContent="center">
+        <Grid container spacing={5} justifyContent="center">
           <Grid item>
             <StatCard title="Member Since" value="2019" icon={<History />} color="#FF8500" />
           </Grid>
@@ -70,6 +71,7 @@ export default function Home() {
           </Grid>
         </Grid>
       </Box>
+      </div>
     </div>
   );
 }
