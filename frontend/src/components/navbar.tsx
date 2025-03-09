@@ -21,7 +21,7 @@ export default function Navbar() {
       </div>
 
       <div className="flex items-center space-x-4">
-        <img src="/flag.png" alt="Flag" className="w-6 h-6" />
+        <img src="/slflag.png" alt="Flag" className="w-6 h-6" />
         <BellIcon className="w-6 h-6 text-white" />
         <EnvelopeIcon className="w-6 h-6 text-white" />
         <div className="flex items-center space-x-2">
