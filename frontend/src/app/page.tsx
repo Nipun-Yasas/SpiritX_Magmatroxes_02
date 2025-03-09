@@ -12,6 +12,7 @@ import Navbar from "@/components/navbar";
 
 
 import Grid from "@/components/Grid";
+import Sidebar from "@/components/ui/sideNav";
 
 export default function Home() {
   return (
@@ -20,11 +21,14 @@ export default function Home() {
     
     <div>
       
+      <Sidebar />
+      
       <Navbar />
       
       <main className="justify-center items-center min-h-screen bg-gray-100">
       
       <Grid />
+
 
     </main>
     </div>
