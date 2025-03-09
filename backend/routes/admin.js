@@ -7,13 +7,13 @@ const express = require('express');
 const router = express.Router();
 
 //CREATE
-router.post("/", createPlayer);
+router.post("/create", createPlayer);
 
 //READ
-router.get("/", getPlayers);
+router.get("/get", getPlayers);
 
 //UPDATE
-router.patch("/:id", updatePlayer);
+router.put("/:id", updatePlayer);
 
 //DELETE
 router.delete("/:id", deletePlayer);

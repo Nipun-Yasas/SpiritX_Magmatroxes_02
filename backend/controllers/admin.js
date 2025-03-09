@@ -57,4 +57,6 @@ const updatePlayer = async (req, res) => {
     }
 }
 
+
+
 module.exports = { createPlayer, getPlayers, deletePlayer, updatePlayer };
