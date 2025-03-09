@@ -3,8 +3,9 @@ const router = express.Router();
 const {getUserTeam, addPlayer, deletePlayer} = require('../controllers/user.js');
 
 //Get user player
-router.get("/team/:id", getUserTeam);
-router.post("/team/:id", addPlayer);
-router.delete("/team/:id", deletePlayer);
+
+router.get("/:id", getUserTeam);
+router.post("/:id", addPlayer);
+router.delete("/:id", deletePlayer);
 
 module.exports = router;
