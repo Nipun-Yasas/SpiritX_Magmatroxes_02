@@ -23,11 +23,15 @@ export default function Home() {
       
       <Sidebar />
       
+      <div className="pl-10">
       <Navbar />
+      </div>
       
       <main className="justify-center items-center min-h-screen bg-gray-100">
       
+      <div className="pl-15">
       <Grid />
+      </div>
 
 
     </main>

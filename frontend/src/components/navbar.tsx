@@ -3,10 +3,10 @@ import { BellIcon, EnvelopeIcon } from "@heroicons/react/24/solid";
 
 export default function Navbar() {
   return (
-    <nav className="bg-[#0D2A48] p-4 flex items-center justify-between shadow-md">
+    <nav className="bg-[#023047] p-4 flex items-center justify-between shadow-md">
       <div className="flex items-center space-x-4">
-        <img src="/vertical_navigation/Home.svg" alt="Home" className="w-6 h-6" />
-        <span className="text-orange-400 text-lg font-semibold">
+        {/* <img src="/vertical_navigation/Home.svg" alt="Home" className="w-6 h-6" /> */}
+        <span className="text-orange-400 text-lg font-semibold pl-10">
           Good Morning, <span className="text-white">Navoda</span>
         </span>
       </div>
