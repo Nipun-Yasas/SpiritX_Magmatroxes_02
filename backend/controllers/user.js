@@ -1,7 +1,6 @@
 const User = require('../models/User.js');
 const Player = require("../models/Player.js");
 
-
 //get players
 const getUserTeam = async (req, res) => {
     try{
@@ -24,15 +23,22 @@ const addPlayer = async (req,res)=>{
         const {playerId} = req.body;
 
         const user = await User.findById(id);
+        const player = await Player.findById(playerId);
 
-        if(user.teamMembers.length >= 11){
-            return res.status(400).json({message: "Team is full"});
+        if (player.price > user.budget) {
+            return res.status(400).json({ message: "Not enough budget to add player" });
         }
 
+        if (user.teamMembers.length >= 11) {
+            return res.status(400).json({ message: "Team is full" });
+        }
+
+        user.budget -= player.price;
         user.teamMembers.push(playerId);
+
         await user.save();
 
-        res.status(200).json({message: "Player added to team"});
+        res.status(200).json({ message: "Player added to team", remainingBudget: user.budget });
     }
     catch(err){
         res.status(400).json({message: err.message});
@@ -42,13 +48,12 @@ const addPlayer = async (req,res)=>{
 //delete players
 const deletePlayer = async (req, res) => {
     
-
     try{
         const {id} = req.params;
         const {playerId} = req.body;
-        const user = User.findById(id);
+        const user = await User.findById(id);
 
-        user.teamMembers = user.teamMembers.filter(id => id.toString() !== player._id.toString());
+        user.teamMembers = user.teamMembers.filter(id => id.toString() !== playerId.toString());
         await user.save();
 
         res.status(200).json({message: "Player removed from team"});

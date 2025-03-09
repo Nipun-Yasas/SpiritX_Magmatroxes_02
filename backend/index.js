@@ -6,6 +6,10 @@ require('dotenv').config();
 const app = express()
 const port = 5000
 
+const cors = require("cors");
+app.use(cors());
+
+
 app.get('/', (req, res) => {
   res.send('Hello! b')
 })
@@ -21,7 +25,6 @@ app.use(bodyParser.json());
 
 //MONGODB CONNECTION
 const mongoose = require('mongoose');
-const User = require('./models/User');
 const dbURI = process.env.DB_URL;
 
 mongoose.connect(dbURI,{

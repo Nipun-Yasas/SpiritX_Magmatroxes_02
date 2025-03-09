@@ -2,15 +2,16 @@ const mongoose = require("mongoose");
 
 const playerSchema = new mongoose.Schema({
     name: { type: String, required: true },
-    category: { type: String, enum: ["Batsman", "Bowler", "All-Rounder"], required: true },
     university: { type: String, required: true },
-    totalruns: { type: Number, default: 0 },
-    wickets: { type: Number, default: 0 },
-    inningsplayed: { type: Number, default: 0 },
-    ballsfaced: { type: Number, default: 0 },
-    overballed: { type: Number, default: 0 },
-    runsconceded: { type: Number, default: 0 },
-    value: { type: Number, required: true },
+    category: { type: String, enum: ["Batsman", "Bowler", "All-Rounder"], required: true },
+    price: { type: Number, required: true },
+    inningsplayed: { type: Number, default: 0,required: true },
+    totalruns: { type: Number, default: 0,required: true },
+    wickets: { type: Number, default: 0,required: true },
+    ballsfaced: { type: Number, default: 0,required: true },
+    overballed: { type: Number, default: 0,required: true },
+    runsconceded: { type: Number, default: 0,required: true },
+    
 });
 
 module.exports = mongoose.model("Player", playerSchema);
